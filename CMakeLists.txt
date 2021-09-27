@@ -38,16 +38,16 @@ message(STATUS "Building: ${BUILD_TYPE}")
 
 # -------- Options ----------
 set(OCPN_TEST_REPO
-    "opencpn/javascript-alpha"
+    "mike-rossiter/javascript-alpha"
     CACHE STRING "Default repository for untagged builds"
 )
 set(OCPN_BETA_REPO
-    "opencpn/javascript-beta"
+    "mike-rossiter/javascript-beta"
     CACHE STRING 
     "Default repository for tagged builds matching 'beta'"
 )
 set(OCPN_RELEASE_REPO
-    "opencpn/javascript-prod"
+    "mike-rossiter/javascript-prod"
     CACHE STRING 
     "Default repository for tagged builds not matching 'beta'"
 )
@@ -73,8 +73,8 @@ endif ()
 project(javascript_pi VERSION 2.8.6.0)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
-set(DISPLAY_NAME javascript)    # Dialogs, installer artifacts, ...
-set(PLUGIN_API_NAME javascript) # As of GetCommonName() in plugin API
+set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
+set(PLUGIN_API_NAME JavaScript) # As of GetCommonName() in plugin API
 set(CPACK_PACKAGE_CONTACT "Mike Rossiter")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Simulate ship movements")
 set(CPACK_PACKAGE_DESCRIPTION [=[
