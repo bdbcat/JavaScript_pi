@@ -341,7 +341,7 @@ ADD_DEFINITIONS(-DSCI_LEXER)
 
 # -------- Setup completed, build the plugin --------
 #
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})
+
 include_directories(BEFORE ${CMAKE_BINARY_DIR}/include)
 
 add_subdirectory("libs/api-16")
