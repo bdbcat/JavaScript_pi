@@ -70,7 +70,7 @@ endif ()
 #
 # -------  Plugin setup --------
 #
-project(javascript_pi VERSION 0.4.0.1)
+project(javascript_pi VERSION 0.4.0.2)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
@@ -121,12 +121,6 @@ SET(SCINTILLA
     scintilla/ScintillaWX.cpp
     scintilla/stc.cpp
     scintilla/include/ILexer.h
-    scintilla/include/Platform.h
-    scintilla/include/SciLexer.h
-    scintilla/include/Sci_Position.h
-    scintilla/include/Scintilla.h
-    scintilla/include/Scintilla.iface
-    scintilla/include/ScintillaWidget.h
     scintilla/lexers/ILexer.h
     scintilla/lexers/LexA68k.cxx
     scintilla/lexers/LexAPDL.cxx
@@ -323,6 +317,14 @@ SET(SCINTILLA
     scintilla/src/XPM.cxx
     scintilla/src/XPM.h
 	)
+SET(HDR
+	scintilla/include/Platform.h
+    scintilla/include/SciLexer.h
+    scintilla/include/Sci_Position.h
+    scintilla/include/Scintilla.h
+    scintilla/include/Scintilla.iface
+    scintilla/include/ScintillaWidget.h
+    )
 
 IF(NOT APPLE)
 
@@ -331,7 +333,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})
   
 ELSE(NOT APPLE)
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC} ${SCINTILLA})
+add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC} ${SCINTILLA} ${HDR})
  
  
 ENDIF(NOT APPLE)
