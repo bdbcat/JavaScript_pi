@@ -70,7 +70,7 @@ endif ()
 #
 # -------  Plugin setup --------
 #
-project(javascript_pi VERSION 0.4.0.5)
+project(javascript_pi VERSION 0.4.0.6)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
@@ -102,7 +102,6 @@ SET(SRC
     src/JSExtensions.cpp
     src/ocpn_duk.h
     src/OPCNapis.cpp
-    src/ocpn_plugin.h
     src/duk_config.h
     src/duktape.h
     src/duktape.cpp
