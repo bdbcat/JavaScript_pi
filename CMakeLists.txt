@@ -70,7 +70,7 @@ endif ()
 #
 # -------  Plugin setup --------
 #
-project(javascript_pi VERSION 0.4.0.10)
+project(javascript_pi VERSION 0.4.0.11)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
@@ -314,13 +314,13 @@ SET(SCINTILLA
     scintilla/src/ViewStyle.h
     scintilla/src/XPM.cxx
     scintilla/src/XPM.h
-    scintilla/include/ILexer.h
-	scintilla/include/Platform.h
-    scintilla/include/SciLexer.h
-    scintilla/include/Sci_Position.h
-    scintilla/include/Scintilla.h
-    scintilla/include/Scintilla.iface
-    scintilla/include/ScintillaWidget.h
+    scintilla/ILexer.h
+	scintilla/Platform.h
+    scintilla/SciLexer.h
+    scintilla/Sci_Position.h
+    scintilla/Scintilla.h
+    scintilla/Scintilla.iface
+    scintilla/ScintillaWidget.h
     )
 
 IF(NOT APPLE)
