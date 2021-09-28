@@ -32,7 +32,7 @@ void initialize_images(void)
 	wxFileName fn;
     wxString tmp_path;
 
-    tmp_path = GetPluginDataDir("JavaScript_pi");
+    tmp_path = GetPluginDataDir("javascript_pi");
     fn.SetPath(tmp_path);
     fn.AppendDir(_T("data"));
 

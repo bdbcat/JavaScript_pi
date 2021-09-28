@@ -65,7 +65,7 @@ JavaScript_pi::JavaScript_pi(void *ppimgr)
 
 	wxFileName fn;
 
-    auto path = GetPluginDataDir("JavaScript_pi");
+    auto path = GetPluginDataDir("javascript_pi");
     fn.SetPath(path);
     fn.AppendDir("data");
     fn.SetFullName("JavaScript_panel_icon.png");
@@ -113,6 +113,7 @@ int JavaScript_pi::Init(void)
     
     //    And load the configuration items
     LoadConfig();
+
     mShowingConsoles = false;   // consoles will hence be shown on toolbar callback
     
     //    This PlugIn needs a toolbar icon, so request its insertion

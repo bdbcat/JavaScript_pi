@@ -305,15 +305,15 @@ duk_ret_t duk_require(duk_context *ctx){ // the module search function
 			wxFileName fn;
 			wxString tmp_path;
 
-			tmp_path = GetPluginDataDir("JavaScript_pi");
+			tmp_path = GetPluginDataDir("javascript_pi");
 			fn.SetPath(tmp_path);
 			fn.AppendDir(_T("data"));
 
-			wxString path = fn.GetPath();
+			wxString path = fn.GetFullPath();
 
-            filePath = path +
-                _T("scripts") + wxFileName::GetPathSeparator() +
-                fileNameGiven;
+            filePath = path + "scripts" + wxFileName::GetPathSeparator() + fileNameGiven;
+						
+
             if (!filePath.FileExists()){
                 pConsole->throw_error(ctx, "require - " + filePath.GetFullName() + " not in scripts library");
                 }

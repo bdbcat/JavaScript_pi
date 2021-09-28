@@ -94,9 +94,10 @@ public:
     bool            mTraceLevelStated {false};  // will be set true after first run of plugin
     wxString        openCPNConfig {wxEmptyString};  // to store the OpenCPN config JSON
 	bool			m_bShowJavaScript;
+	wxBitmap        m_panelBitmap;
 
 private:
-    wxBitmap        m_panelBitmap;
+    
     bool            m_bJavaScriptShowIcon;
     bool            LoadConfig(void);
     bool            SaveConfig(void);
