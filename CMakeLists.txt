@@ -70,8 +70,8 @@ endif ()
 #
 # -------  Plugin setup --------
 #
-project(javascript_pi VERSION 0.4.0.8)
-set(PKG_PRERELEASE "beta")  # Empty, or a tag like 'beta'
+project(javascript_pi VERSION 0.4.0.9)
+set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
 set(PLUGIN_API_NAME JavaScript) # As of GetCommonName() in plugin API
