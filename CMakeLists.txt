@@ -314,13 +314,13 @@ SET(SCINTILLA
     scintilla/src/ViewStyle.h
     scintilla/src/XPM.cxx
     scintilla/src/XPM.h
-    scintilla/ILexer.h
-	scintilla/Platform.h
-    scintilla/SciLexer.h
-    scintilla/Sci_Position.h
-    scintilla/Scintilla.h
-    scintilla/Scintilla.iface
-    scintilla/ScintillaWidget.h
+    scintilla/include/ILexer.h
+	scintilla/include/Platform.h
+    scintilla/include/SciLexer.h
+    scintilla/include/Sci_Position.h
+    scintilla/include/Scintilla.h
+    scintilla/include/Scintilla.iface
+    scintilla/include/ScintillaWidget.h
     )
 
 IF(NOT APPLE)
