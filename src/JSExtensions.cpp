@@ -301,10 +301,17 @@ duk_ret_t duk_require(duk_context *ctx){ // the module search function
             return 1;
             }
         else {  // we will look for it in the build-in scripts
-            filePath = *GetpSharedDataLocation() +
-                _T("plugins") + wxFileName::GetPathSeparator() +
-                _T("JavaScript_pi") + wxFileName::GetPathSeparator() +
-                _T("data") + wxFileName::GetPathSeparator() +
+
+			wxFileName fn;
+			wxString tmp_path;
+
+			tmp_path = GetPluginDataDir("JavaScript_pi");
+			fn.SetPath(tmp_path);
+			fn.AppendDir(_T("data"));
+
+			wxString path = fn.GetPath();
+
+            filePath = path +
                 _T("scripts") + wxFileName::GetPathSeparator() +
                 fileNameGiven;
             if (!filePath.FileExists()){

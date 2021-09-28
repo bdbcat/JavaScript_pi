@@ -86,17 +86,6 @@ JavaScript_pi::JavaScript_pi(void *ppimgr)
         wxLogWarning("JavaScript panel icon has NOT been loaded");
     m_bShowJavaScript = false;
 
-
- /*
-    wxString shareLocn = *GetpSharedDataLocation() +
-    _T("plugins") + wxFileName::GetPathSeparator() +
-    _T("JavaScript_pi") + wxFileName::GetPathSeparator()
-    + _T("data") + wxFileName::GetPathSeparator();
-    wxImage panelIcon(shareLocn + _T("JavaScript_pi_panel_icon.png"));
-    if (panelIcon.IsOk())
-        m_panelBitmap = wxBitmap(panelIcon);
-    else
-        wxLogMessage(_T("    JavaScript_pi panel icon NOT loaded"));*/
 #endif
 }
 

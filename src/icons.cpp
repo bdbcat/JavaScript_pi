@@ -28,15 +28,20 @@ void initialize_images(void)
 	}
 	
 #ifdef JAVASCRIPT_USE_SVG
+
 	wxFileName fn;
-	fn.SetPath(*GetpSharedDataLocation());
-	fn.AppendDir(_T("plugins"));
-	fn.AppendDir(_T("JavaScript_pi"));
-	fn.AppendDir(_T("data"));
-	fn.SetFullName(_T("JavaScript_pi.svg"));
-	_svg_JavaScript = fn.GetFullPath();
-	fn.SetFullName(_T("JavaScript_pi_toggled.svg"));
-	_svg_JavaScript_toggled = fn.GetFullPath();
+    wxString tmp_path;
+
+    tmp_path = GetPluginDataDir("JavaScript_pi");
+    fn.SetPath(tmp_path);
+    fn.AppendDir(_T("data"));
+
+    fn.SetFullName("JavaScript_pi.svg");
+    _svg_JavaScript = fn.GetFullPath();
+    fn.SetFullName("JavaScript_pi_toggled.svg");
+    _svg_JavaScript_toggled = fn.GetFullPath();
+
+
 #endif
 	return;
 }

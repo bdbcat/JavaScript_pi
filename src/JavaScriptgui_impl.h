@@ -228,10 +228,7 @@ public:
             }
 
 #ifndef IN_HARNESS
-        wxString iconLocation = *GetpSharedDataLocation()
-        + _T("plugins/JavaScript_pi/data/blank.ico");
-        wxIcon icon(iconLocation, wxBITMAP_TYPE_ICO);
-        SetIcon(icon);
+        //removed blank.ico
 #endif
 
         mConsoleName = consoleName;
