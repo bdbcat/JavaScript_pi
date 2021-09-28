@@ -70,7 +70,7 @@ endif ()
 #
 # -------  Plugin setup --------
 #
-project(javascript_pi VERSION 0.4.0.2)
+project(javascript_pi VERSION 0.4.0.3)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
@@ -120,7 +120,6 @@ SET(SCINTILLA
     scintilla/ScintillaWX.h
     scintilla/ScintillaWX.cpp
     scintilla/stc.cpp
-    scintilla/include/ILexer.h
     scintilla/lexers/ILexer.h
     scintilla/lexers/LexA68k.cxx
     scintilla/lexers/LexAPDL.cxx
@@ -318,6 +317,7 @@ SET(SCINTILLA
     scintilla/src/XPM.h
 	)
 SET(HDR
+    scintilla/include/ILexer.h
 	scintilla/include/Platform.h
     scintilla/include/SciLexer.h
     scintilla/include/Sci_Position.h
