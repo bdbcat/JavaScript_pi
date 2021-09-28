@@ -68,7 +68,7 @@ JavaScript_pi::JavaScript_pi(void *ppimgr)
     auto path = GetPluginDataDir("javascript_pi");
     fn.SetPath(path);
     fn.AppendDir("data");
-    fn.SetFullName("JavaScript_panel_icon.png");
+    fn.SetFullName("JavaScript_pi_panel_icon.png");
 
     path = fn.GetFullPath();
 
