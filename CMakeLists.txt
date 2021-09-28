@@ -38,16 +38,16 @@ message(STATUS "Building: ${BUILD_TYPE}")
 
 # -------- Options ----------
 set(OCPN_TEST_REPO
-    "mike-rossiter/javascript-alpha"
+    "opencpn/javascript-alpha"
     CACHE STRING "Default repository for untagged builds"
 )
 set(OCPN_BETA_REPO
-    "mike-rossiter/javascript-beta"
+    "opencpn/javascript-beta"
     CACHE STRING 
     "Default repository for tagged builds matching 'beta'"
 )
 set(OCPN_RELEASE_REPO
-    "mike-rossiter/javascript-prod"
+    "opencpn/javascript-prod"
     CACHE STRING 
     "Default repository for tagged builds not matching 'beta'"
 )
@@ -70,7 +70,7 @@ endif ()
 #
 # -------  Plugin setup --------
 #
-project(javascript_pi VERSION 0.4.0.9)
+project(javascript_pi VERSION 0.4.0.10)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
