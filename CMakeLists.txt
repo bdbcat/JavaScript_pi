@@ -70,7 +70,7 @@ endif ()
 #
 # -------  Plugin setup --------
 #
-project(javascript_pi VERSION 0.4.0.3)
+project(javascript_pi VERSION 0.4.0.4)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
@@ -315,8 +315,6 @@ SET(SCINTILLA
     scintilla/src/ViewStyle.h
     scintilla/src/XPM.cxx
     scintilla/src/XPM.h
-	)
-SET(HDR
     scintilla/include/ILexer.h
 	scintilla/include/Platform.h
     scintilla/include/SciLexer.h
@@ -333,7 +331,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})
   
 ELSE(NOT APPLE)
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC} ${SCINTILLA} ${HDR})
+add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC} ${SCINTILLA})
  
  
 ENDIF(NOT APPLE)
