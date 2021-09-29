@@ -222,6 +222,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE "ON")
 file(GLOB SRC
     "*.h"
     "*.cpp"
+    "*.cxx"
 )
 
 add_library(SCINTILLA STATIC ${SRC})
