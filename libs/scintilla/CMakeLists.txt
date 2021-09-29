@@ -214,8 +214,6 @@ SET(SRC
     scintilla/include/Scintilla.h
     scintilla/include/Scintilla.iface
     scintilla/include/ScintillaWidget.h
-    scintilla/ScintillaWX.cpp
-    scintilla/ScintillaWX.h
     )
 
 # Library is used also in the plugins, so:
