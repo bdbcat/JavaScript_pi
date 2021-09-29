@@ -219,6 +219,11 @@ SET(SRC
 # Library is used also in the plugins, so:
 set(CMAKE_POSITION_INDEPENDENT_CODE "ON")
 
+file(GLOB SRC
+    "*.h"
+    "*.cpp"
+)
+
 add_library(SCINTILLA STATIC ${SRC})
 add_library(scintilla::scintilla ALIAS SCINTILLA)
 
@@ -226,4 +231,4 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
   set_property(TARGET SCINTILLA PROPERTY COMPILE_FLAGS "-fvisibility=hidden")
 endif ()
 target_include_directories(SCINTILLA PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(SCINTILLA PRIVATE ${wxWidgets_LIBRARIES})
+
