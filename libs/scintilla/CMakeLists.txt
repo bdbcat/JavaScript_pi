@@ -232,4 +232,4 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
   set_property(TARGET SCINTILLA PROPERTY COMPILE_FLAGS "-fvisibility=hidden")
 endif ()
 target_include_directories(SCINTILLA PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
+target_include_directories(SCINTILLA PRIVATE ${wxWidgets_INCLUDE_DIRS})
