@@ -225,7 +225,7 @@ file(GLOB SRC
     "*.cxx"
 )
 
-add_library(SCINTILLA STATIC ${SRC})
+add_library(SCINTILLA SHARED ${SRC})
 add_library(scintilla::scintilla ALIAS SCINTILLA)
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
