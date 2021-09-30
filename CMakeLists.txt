@@ -168,11 +168,6 @@ if (NOT ${BUILD_TYPE} STREQUAL "flatpak")
 
   include_directories(BEFORE ${CMAKE_BINARY_DIR}/include)
 
-   if(APPLE)
-	add_subdirectory("libs/scintilla")
-	target_link_libraries(${PACKAGE_NAME} scintilla::scintilla)
-  endif()
-
   add_subdirectory("libs/jsoncpp")
   target_link_libraries(${PACKAGE_NAME} ocpn::jsoncpp)
   
@@ -182,6 +177,10 @@ if (NOT ${BUILD_TYPE} STREQUAL "flatpak")
   add_subdirectory("libs/wxJSON")
   target_link_libraries(${PACKAGE_NAME} ocpn::wxjson)
 
+ if(APPLE)
+	add_subdirectory("libs/scintilla")
+	target_link_libraries(${PACKAGE_NAME} scintilla::scintilla)
+  endif()
  
 endif ()
 

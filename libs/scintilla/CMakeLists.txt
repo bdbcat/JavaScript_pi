@@ -219,13 +219,13 @@ SET(SRC
 # Library is used also in the plugins, so:
 set(CMAKE_POSITION_INDEPENDENT_CODE "ON")
 
-file(GLOB SRC
+file(GLOB SRCS
     "*.h"
     "*.cpp"
     "*.cxx"
 )
 
-add_library(SCINTILLA SHARED ${SRC})
+add_library(SCINTILLA STATIC ${SRCS})
 add_library(scintilla::scintilla ALIAS SCINTILLA)
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
