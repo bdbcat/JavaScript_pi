@@ -24,17 +24,17 @@ flatpak-steps: &flatpak-steps
     - run: python3 ci/git-push
 
 jobs:
-
-  build-flatpak-arm64:
+build-flatpak-arm64:
     machine:
       image: ubuntu-2004:202101-01
     resource_class: arm.medium
     environment:
       - OCPN_TARGET: flatpak-arm64
+      - FLATPAK_BRANCH: beta
     parameters:
       cache-key:
         type: string
-        default: "fp-arm20-v2"
+        default: "fp-arm20-v1"
     <<: *flatpak-steps
 
   build-flatpak-x86-1808:
