@@ -24,13 +24,13 @@ flatpak-steps: &flatpak-steps
     - run: python3 ci/git-push
 
 jobs:
+
   build-flatpak-arm64:
     machine:
       image: ubuntu-2004:202101-01
     resource_class: arm.medium
     environment:
       - OCPN_TARGET: flatpak-arm64
-      - FLATPAK_BRANCH: beta      
     parameters:
       cache-key:
         type: string
@@ -42,7 +42,7 @@ jobs:
       image: ubuntu-2004:202010-01
     environment:
       - OCPN_TARGET: flatpak
-      - FLATPAK_BRANCH: stable
+      - BUILD_1808: "true"
     parameters:
       cache-key:
         type: string
@@ -54,7 +54,6 @@ jobs:
       image: ubuntu-2004:202010-01
     environment:
       - OCPN_TARGET: flatpak
-      - FLATPAK_BRANCH: beta      
     parameters:
       cache-key:
         type: string
@@ -83,20 +82,6 @@ jobs:
       - run: sh -c "otool -L build/app/*/OpenCPN.app/Contents/PlugIns/*.dylib"
       - run: cd build; /bin/bash < upload.sh
       - run: python3 ci/git-push
-
- build-trusty:
-    docker:
-      - image: circleci/buildpack-deps:trusty-scm
-    environment:
-      - OCPN_TARGET: trusty
-    steps:
-      - checkout
-      - run: ci/circleci-build-trusty.sh
-      - run: sh -c "ldd build/app/*/lib/opencpn/*.so"
-      - run: cd build; /bin/bash < upload.sh
-      - run: python3 ci/git-push
-
-
 
   build-xenial:
     docker:
@@ -135,33 +120,11 @@ jobs:
       - OCPN_TARGET: buster
     <<: *debian-steps
 
-  build-armhf-stretch:
-    machine: true
-    environment:
-      - OCPN_TARGET=stretch-armhf
-      - DOCKER_IMAGE=balenalib/raspberry-pi-debian:stretch
-    steps:
-      - checkout
-      - run: ci/generic-build-raspbian-armhf.sh
-      - run: cd build; /bin/bash < upload.sh
-      - run: python3 ci/git-push
-
-  build-armhf-buster:
-    machine: true
-    environment:
-      - OCPN_TARGET=buster-armhf
-      - DOCKER_IMAGE=balenalib/raspberry-pi-debian:buster
-    steps:
-      - checkout
-      - run: ci/generic-build-raspbian-armhf.sh
-      - run: cd build; /bin/bash < upload.sh
-      - run: python3 ci/git-push
-
   build-android-arm64:
     docker:
       - image: circleci/android:api-28-ndk
     environment:
-      - OCPN_TARGET:  android-arm64
+      - OCPN_TARGET: android-arm64
     steps:
       - checkout
       - run: ci/circleci-build-android-arm64.sh
@@ -172,24 +135,26 @@ jobs:
     docker:
       - image: circleci/android:api-28-ndk
     environment:
-      - OCPN_TARGET:  android-armhf
+      - OCPN_TARGET: android-armhf
     steps:
       - checkout
       - run: ci/circleci-build-android-armhf.sh
       - run: cd build; /bin/bash < upload.sh
       - run: python3 ci/git-push
-      
+
+
 std-filters: &std-filters
   filters:
     branches:
-      only:
-        - master
-        - build
+      ignore:
+        - tmp
+        - /tmp-.*/
 
 workflows:
   version: 2
   build_all:
     jobs:
+
       - build-flatpak-arm64:
           <<: *std-filters
 
@@ -216,15 +181,6 @@ workflows:
 
       - build-buster:
           <<: *std-filters
-
-      - build-trusty:
-          <<: *std-filters
-
-      - build-armhf-stretch:
-          <<: *std-filters
-
-      - build-armhf-buster:
-          <<: *std-filters                   
 
       - build-android-arm64:
           <<: *std-filters
