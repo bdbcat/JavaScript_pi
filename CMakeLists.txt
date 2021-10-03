@@ -70,13 +70,13 @@ endif ()
 #
 # -------  Plugin setup --------
 #
-project(javascript_pi VERSION 0.4.0.11)
+project(javascript_pi VERSION 0.4.0.12)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME JavaScript)    # Dialogs, installer artifacts, ...
 set(PLUGIN_API_NAME JavaScript) # As of GetCommonName() in plugin API
-set(CPACK_PACKAGE_CONTACT "Mike Rossiter")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Simulate ship movements")
+set(CPACK_PACKAGE_CONTACT "Tony Voss")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Run JavaScript and interact with OpenCPN")
 set(CPACK_PACKAGE_DESCRIPTION [=[
 This plugin for OpenCPN allows you to run JavaScript and to interact with OpenCPN.
 You can use it to script your own enhancements to standard OpenCPN functionality.
